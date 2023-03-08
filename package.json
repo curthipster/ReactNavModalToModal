@@ -1,5 +1,5 @@
 {
-  "name": "NavIosCrashRepro",
+  "name": "ReactNavModalToModal",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "react": "18.2.0",
-    "@react-navigation/bottom-tabs": "^6.5.5",
+    "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
     "react-native": "0.71.3",
