@@ -1,28 +1,17 @@
 /* eslint-disable react-native/no-inline-styles */
 import {Pressable, Text, View} from 'react-native';
-import {
-  NavigationContainer,
-  NavigatorScreenParams,
-  useNavigation,
-} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {
   createNativeStackNavigator,
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 
-type TabNavigatorParamList = {
-  Home: undefined;
-  AnotherTab: undefined;
-};
-
 type RootStackParamList = {
-  TabNavigator: NavigatorScreenParams<TabNavigatorParamList>;
+  Home: undefined;
   ModalOne: undefined;
   ModalTwo: undefined;
 };
 
-const Tab = createBottomTabNavigator();
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 function HomeScreen() {
@@ -40,19 +29,6 @@ function HomeScreen() {
         <Text style={{color: 'purple'}}>Open first modal</Text>
       </Pressable>
     </View>
-  );
-}
-
-function AnotherTabScreen() {
-  return <View />;
-}
-
-function TabNavigator() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="AnotherTab" component={AnotherTabScreen} />
-    </Tab.Navigator>
   );
 }
 
@@ -98,7 +74,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <RootStack.Navigator>
-        <RootStack.Screen name="TabNavigator" component={TabNavigator} />
+        <RootStack.Screen name="Home" component={HomeScreen} />
         <RootStack.Screen
           options={{presentation: 'modal'}}
           name="ModalOne"
